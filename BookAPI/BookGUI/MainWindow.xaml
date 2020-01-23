@@ -1,0 +1,42 @@
+﻿<Window x:Class="BookGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+
+            <Button Click="GetAllCarsAsync">Get all Cars</Button>
+
+            <DatePicker Name="dp1" DisplayDate="2020-01-01" SelectedDate="{Binding SelectedDate, Mode=TwoWay}"/>
+            <Button Click="GetFreeCars">Get free Cars for selected Day</Button>
+            <DatePicker Name="dp2" DisplayDate="2020-01-01" SelectedDate="{Binding SelectedBookDate, Mode=TwoWay}"/>
+            <ComboBox ItemsSource="{Binding Path=Cars}" SelectedItem="{Binding Path=SelectedCar}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Name}"></Label>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Click="BookCar">Book</Button>
+
+            <ListView x:Name="MyListView" ItemsSource="{Binding Cars}">
+                <ListView.View>
+
+                    <GridView>
+                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Type" Width="50" DisplayMemberBinding="{Binding Type}" />
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Books" Width="50" DisplayMemberBinding="{Binding Books}" />
+
+                </GridView>
+                    </ListView.View>
+
+            </ListView>
+
+        </StackPanel>
+    </Grid>
+</Window>

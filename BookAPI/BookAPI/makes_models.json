@@ -1,0 +1,26 @@
+[
+  {
+    "Type": "Sebring",
+    "Name": "Chrysler"
+  },
+  {
+    "Type": "Mark VII",
+    "Name": "Lincoln"
+  },
+  {
+    "Type": "Corsica",
+    "Name": "Chevrolet"
+  },
+  {
+    "Type": "Sportage",
+    "Name": "Kia"
+  },
+  {
+    "Type": "Sonata",
+    "Name": "Hyundai"
+  },
+  {
+    "Type": "Mustang",
+    "Name": "Ford"
+  }
+]
